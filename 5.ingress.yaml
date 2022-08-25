@@ -1,0 +1,29 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: demo-ingress
+  labels:
+    demo: test-2508
+spec:
+  # tls:
+  #   - hosts:
+  #       - demo-k8s.bkit.solutions
+  #     secretName: demo-k8s-dev
+  rules:
+  - host: demo-k8s.bkit.solutions
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: demo-service
+            port: 
+              number: 80
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: demo-service
+            port: 
+              number: 443
