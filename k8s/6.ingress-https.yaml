@@ -4,9 +4,16 @@ metadata:
   name: demo-ingress
   labels:
     demo: test-2508
+  # annotations:
+  #   kubernetes.io/ingress.class: nginx
+  #   cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
+  # tls:
+  #   - hosts:
+  #       - demo-k8s.bkit.solutions
+  #     secretName: demo-k8s-dev
   rules:
-  - host: demo-http.bkit.solutions
+  - host: demo-k8s.bkit.solutions
     http:
       paths:
       - pathType: Prefix
